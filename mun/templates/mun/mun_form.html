@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MUN</title>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet"> 
+
+
+<style type="text/css">
+  .form-group label{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+body{
+  background: #0f0c29 !important;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29) !important;  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #24243e, #302b63, #0f0c29) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+</style>
+</head>
+
+<body>
+	   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/leave/home"><i class="fa fa-list-alt">
+                
+            </i>   IIST MUN</a>
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">     
+      
+
+      
+    </ul>
+    <ul class="navbar-nav ">
+        
+      
+                 <li class="nav-item active">
+            <a class="nav-link" href="#"><i class="fa fa-user" style="padding-right:5px;"></i>Logged in as</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'logout'%}?next={{request.path}}"><i class="fa fa-sign-out" style="padding-right:5px;"></i>Logout</a>
+        </li>
+        {% else %}
+                <li class="nav-item active">
+            <a class="nav-link" href="{% url 'signup' %}?next={{request.path}}"><i class="fa fa-user-plus" style="padding-right:5px;"></i>Sign Up</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="{% url 'login' %}?next={{request.path}}"><i class="fa fa-sign-in" style="padding-right:5px;"></i>Log In</a>
+        </li>
+                 
+        {% endif %}
+
+
+    </ul>
+  </div>
+</nav>
+
+
+
+<div class="container"></div>
+<div class="row" >
+<div class="col-md-3"></div>
+
+
+
+
+
+
+            <div class="col-md-6">
+              <div class="card" style=" margin-top: 40px; -webkit-box-shadow: 10px 10px 6px -6px #401b60;
+       -moz-box-shadow: 10px 10px 6px -6px #401b60;
+            box-shadow: 10px 10px 6px -6px #401b60;
+            border: none;">
+                <h1 style="
+                opacity:0.8;
+                color:#e5e6e8;
+            background: #4776E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #8E54E9, #4776E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #8E54E9, #4776E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                font-size: 25px;
+ 
+                padding: 30px;
+                text-align: center;
+
+                "  >
+                SIGN UP
+                </h1>
+              
+                           
+                <form method="post" class="add_form" style="margin: 40px;margin-top:0;font-family: 'Roboto', sans-serif;font-weight:100;">
+                  {% csrf_token %}
+                  {% include 'includes/bs4_form.html' with form=form %}
+                  <button class="btn btn-primary" style="margin-bottom:20px;">Submit</button>
+                </form>
+              </div>             
+           </div>
+<div class="col-md-3"></div>
+
+</div>
+
+
+
+</body>
+

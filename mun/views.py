@@ -4,8 +4,7 @@ from .forms import MunForm
 
 
 
-def mun_form(request):
-    return render(request, 'mun/mun_form.html', {})
+
 
 def mun_form(request):
 	if request.method == 'POST':

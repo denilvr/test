@@ -6,12 +6,16 @@
   <title>IIST MUN</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   <style>
   body {
       /*font: 400 15px Lato, sans-serif;*/
@@ -221,7 +225,7 @@ background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+
     color: white !important;
     opacity: 0.6;
   }
-  .navbar-nav>.active>a{
+  .navbar-nav>.nav-item>.active{
     background-color: white !important;
     opacity: 1 !important;
     color: black !important;
@@ -234,7 +238,7 @@ background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
 
-<nav class="navbar navbar-default navbar-fixed-top">
+ <!-- <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -254,7 +258,34 @@ background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+
       </ul>
     </div>
   </div>
+</nav> 
+ -->
+
+
+<nav class="navbar navbar-light bg-light fixed-top navbar-expand-md" style="padding: 0 !important;border:none;">
+    <div class="container" style="margin:0 !important;">
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">&#x2630;</button> <a class="navbar-brand" href="#myPage">IIST MUN Logo</a>
+        <div
+        class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item"><a href="#about" class="nav-link">ABOUT US</a>
+                </li>
+                <li class="nav-item"><a href="#services" class="nav-link">COMMITTEES</a>
+                </li>
+                <li class="nav-item"><a href="#pricing" class="nav-link">AMBASSADORS</a>
+                </li>
+                <li class="nav-item"><a href="#contact" class="nav-link">CONTACT</a>
+                </li>
+            </ul>
+    </div>
+    </div>
 </nav>
+
+
+
+
+
+
 
 <div id="main" class="jumbotron text-center" >
   <img src="{% static 'Final.png' %}">

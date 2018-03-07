@@ -2,20 +2,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Theme Made By www.w3schools.com - No Copyright -->
+
   <title>IIST MUN</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+<link rel="icon" type="image/png" href="{% static 'favicon-32x32.png' %}" sizes="32x32" />
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:200" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:400i" rel="stylesheet">
+<script>
+  function reveal(){
+    $("#letter").toggleClass("hide_letter");
+    $("#show_hide_button span").toggleClass("hide");
+  }
+</script>
   <style>
   body {
-      /*font: 400 15px Lato, sans-serif;*/
-      font-family: 'Montserrat', sans-serif;
+     
+      font-family: 'Archivo', sans-serif;
       line-height: 1.8;
       color: #818181;
   }
@@ -99,11 +110,7 @@ background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+
   .panel:hover {
       box-shadow: 5px 0px 40px rgba(0,0,0, .2);
   }
-  /*.panel-footer .btn:hover {
-      border: 1px solid #f4511e;
-      background-color: rgb(15,12,41,0.5) !important;
-      color: #f4511e;
-  }*/
+
   .panel-heading {
       color: #fff !important;
       background-color: rgba(15,12,41,0.8)  !important;
@@ -131,33 +138,6 @@ background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+
     padding: 0 !important;
     border: none !important;
   }
-  /*.panel-footer .btn {
-      margin: 15px 0;
-      background-color: #f4511e;
-      color: #fff;
-  }*/
- /* .navbar {
-      margin-bottom: 0;
-      background-color: #f4511e;
-      z-index: 9999;
-      border: 0;
-      font-size: 12px !important;
-      line-height: 1.42857143 !important;
-      letter-spacing: 4px;
-      border-radius: 0;
-      font-family: Montserrat, sans-serif;
-  }
-  .navbar li a, .navbar .navbar-brand {
-      color: #fff !important;
-  }
-  .navbar-nav li a:hover, .navbar-nav li.active a {
-      color: #f4511e !important;
-      background-color: #fff !important;
-  }
-  .navbar-default .navbar-toggle {
-      border-color: transparent;
-      color: #fff !important;
-  }*/
   footer .glyphicon {
       font-size: 20px;
       margin-bottom: 20px;
@@ -210,11 +190,9 @@ background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+
     border: none !important;
   }
   .navbar{
-      background: #0f0c29;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
+background: #6441A5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2a0845, #6441A5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2a0845, #6441A5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
    
   }
   .navbar ul a{
@@ -223,13 +201,55 @@ background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+
   }
   .navbar-nav>.active>a{
     background-color: white !important;
+
     opacity: 1 !important;
     color: black !important;
   }
   .navbar-collapse,.navbar-default{
     border:none !important;
   }
+    .hide_letter{
+      height:400px;
+      overflow:hidden;
+    }
+    .hide{
+      display: none;
+    }
+    .alert_container{
+      width: 75%;
 
+    }
+    .close{
+      color: red !important;
+      opacity: 0.6 !important;
+    }
+    .invalid-feedback{
+      color: red !important;
+      opacity: 0.6 !important;
+    }
+    .is-invalid{
+      border : 1px solid #ef2020;
+    }
+    .is-valid{
+      border : 1px solid #34af65;
+    }
+    .nav-tabs>li{
+      width: 50% !important;
+    text-align: center !important;
+    font-size: 25px !important;
+    }
+    .item{
+      height: 100vh;
+    }
+    .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
   </style>
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -237,63 +257,111 @@ background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+      <button id="sandwich" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage">IIST MUN Logo</a>
+      <a class="navbar-brand" href="#myPage">IIST MUN</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right" >
+        <li id="#home_li"><a href="#myPage" style="background-color:transparent !important;color:white !important;opacity:0.6 !important;">HOME</a></li>
         <li><a href="#about">ABOUT US</a></li>
-        <li><a href="#services">COMMITTEES</a></li>
-        
-        <li><a href="#pricing">AMBASSADORS</a></li>
+        <li><a href="#services">SECRETARIAT</a></li>        
+        <li><a href="#pricing">COMMITTEES</a></li>
+        <li><a href="#ip">IP</a></li>
         <li><a href="#contact">CONTACT</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<div id="main" class="jumbotron text-center" >
-  <img src="{% static 'Final.png' %}">
-  <h1>IIST MUN</h1> 
-  <p>5th - 7th April</p> 
-  <!--<form>
-    <div class="input-group">
-      <input type="email" class="form-control" size="50" placeholder="Email Address" required>
-      <div class="input-group-btn">
-        <button type="button" class="btn btn-danger">Subscribe</button>
-      </div>
-    </div>
-  </form>-->
-
+<div id="main" class="jumbotron text-center " style="min-height:100vh;padding:0 !important;background-size: cover;"> <!-- min height ensures this section takes up entire window height
+ -->
+ <div id="myCarousel" class="carousel slide hidden-xs hidden-sm" data-ride="carousel">
+  <!-- Indicators -->
   
 
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="{% static '1.jpg' %}" alt="1" style="width:100%; opacity:0.8">
+      
+    </div>
+
+    <div class="item">
+      <img src="{% static '2.jpg' %}" alt="2" style="width:100%; opacity:0.8">
+    </div>
+
+    <div class="item">
+      <img src="{% static '3.jpg' %}" alt="3" style="width:100%; opacity:0.8">
+    </div>
+    <div class="item">
+      <img src="{% static '11.jpg' %}" alt="3" style="width:100%; opacity:0.8">
+    </div>
+   
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" style="color:white;"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" style="color:white;"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
-<!-- style="background: url(4.jpg) no-repeat; background-position: right center;" -->
-<!-- Container (About Section) -->
+ <div id="logo" style="position:absolute;">
+    <img  src="{% static 'MUN_logo.png' %}" >
+  <h1>IIST MUN</h1> 
+  <p>7th and 8th April</p> 
+ </div>
+ 
+</div>
+
+  <div  class="container-fluid " style="background: rgba(0, 0, 0, 0.6); color:white;" >
+    <div id="letter" class="row">
+      <div class="col-md-12" style="font-size:22px;font-family: 'PT Sans', sans-serif;">        
+        
+        <h1 style="font-size:40px;" class="text-center">Letter from the Secretary-General</h1> <br> 
+        <p>Dear Delegates, Faculty Advisors, and members of the IIST MUN community,</p> 
+        <p>Welcome to IIST Model United Nations 2018!</p>
+        <p>I am truly honored to serve as your Secretary-General for the Eighth Session of IIST MUN. We hope that you will join us for the conference, which will be held on Saturday April, 7 and Sunday April, 8 in Indian Institute Of Space Science and Technology, Trivandrum.</p>
+        <p>IIST MUN constantly strives to embody the educational and diplomatic spirit that inspired the creation of Model United Nations several decades ago. Our commitments to substantive excellence, diplomacy, and service to our delegates are all in the name of fostering greater global cooperation. Despite that we simulate real-world decision-making bodies, we strive to model the ideals of multilateralism and diplomacy.</p>
+        <p>Our Staff of IIST undergraduates will be working tirelessly through March-end and April 2018 to ensure that your delegate experience at IIST MUN 2018 is incredible, both substantively and socially. Please browse through our website to see all of the committees and opportunities that will be offered at IIST MUN 2018, and if you have any questions, please do not hesitate to contact us. On behalf of the entire staff of the conference, I look forward to welcoming you in person at the 8th Session of Indian Institute Of Space Science and Technology Model United Nations!</p>
+        <div style="line-height: 30px;"> 
+            Sincerely,<br>  
+<b>  Varshith Reddy </b><br> 
+Secretary-General <br>  
+IIST Model United Nations 2018 <br> 
+
+        </div>
+
+      </div>
+    </div>
+    <br>
+  </div>
+
+
 <div id="about" class="container-fluid">
   <div class="row" >
     <div class="col-sm-12 col-md-5 col-lg-5 col-xs-12">   
       
-      <h1>ABOUT US</h1>
-      <h4>“Today, no walls can separate humanitarian or human rights crisis in one part of the world from national security crises in another. What begins with the failure to uphold the dignity of one life all too often ends with a calamity for entire nations.”<br>
+      <h1 style="margin-bottom: 30px;">ABOUT US</h1>
+      <p style="font-size:17px;">Founded in 2011, only 3 years after the college was established IIST MUN is one of the most prestigious conference of its kind in South India. Staffed entirely by IIST undergraduates, IIST MUN gathers participants from various parts of India, especially South India, to simulate the activities of the United Nations. IIST MUN offers a unique opportunity to experience the challenges of international negotiation and diplomacy.</p>
+<p style="font-size:17px;">This year, the conference will take this tradition to a new level with numerous innovations designed to enhance the delegate experience. This session will be held in IIST, Trivandrum on April 7th and 8th, 2018 . Throughout the conference, delegates will gain insight into the workings of the United Nations by actively participating in the resolution of important global issues. Participants will not only work with many other motivated college students with the common goals of furthering international awareness and building consensus, but will also work within a lively social setting.</p>
+<p style="font-size:17px;">The Secretariat cordially invites you to join us for the 8th session of Indian Institute of Space Science and Technology Model United Nations.</p>
 
--Kofi Annan, Former Secretary General of the United Nations</h4><br>
-      <p>Model United Nations, popularly referred to as MUN, is an academic simulation of the United Nations and its various organs. In this creative simulation, participants take up the role of international diplomats and representatives of countries in various UN bodies.</p>
        
       <br>
-      <button class="btn btn-success btn-lg">Learn More</button>
+      
     </div>
     <div class="col-md-7 col-lg-7">
-      <img src="{% static '4.jpg' %}" class="img-responsive">
+      <img src="{% static '12.jpg' %}" class="img-responsive">
     </div>
-    <!--
-    <div class="col-sm-4">
-      <span class="glyphicon glyphicon-signal logo"></span>
-    </div>-->
+    
     
   </div>
   <div class="row">
@@ -301,192 +369,137 @@ background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+
      </div>
   </div>
 </div>
-<!-- 
-<div class="container-fluid bg-grey">
-  <div class="row">
-    <div class="col-sm-4">
-    <span class="glyphicon glyphicon-globe logo slideanim"></span>
-    </div>
-    <div class="col-sm-8">
-      <h2>Our Values</h2><br>
-      <h4><strong>MISSION:</strong> Our mission lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4><br>
-      <p><strong>VISION:</strong> Our vision Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-  </div>
-</div>
--->
+
 <!-- Container (Services Section) -->
 <div id="services" class="container-fluid text-center bg-grey" style="padding-top: 30px;">
-  <h1>AMBASADORS</h1>
+  <h1>SECRETARIAT</h1>
   
   <br>
   <div class="row slideanim">
-    <div class="col-sm-4">
-      <img src="{% static 'person.jpg' %}" class="img-responsive">
-      <h4>Person 1</h4>
+    <div class="col-md-4 ">
+      <img src="{% static 'varshith.jpg' %}" class="img-responsive" height="250px" width="250px" style="margin:auto;border-radius:50%;">
+      <h3>Varshith Reddy</h3>
+      <h4>Secretary-General</h4>
       
     </div>
-    <div class="col-sm-4">
-      <img src="{% static 'person.jpg' %}" class="img-responsive">
-      <h4>Person 2</h4>
-     
+    <div class="col-md-4">
+      <img src="{% static 'prajwal.jpg' %}" class="img-responsive" height="250px" width="250px" style="margin:auto;border-radius:50%;">
+      <h3>Prajwal Patnaik</h3>
+      <h4>Director-General</h4>
     </div>
-    <div class="col-sm-4">
-      <img src="{% static 'person.jpg' %}"  class="img-responsive">
-      <h4>Person 3</h4>
-     
+    <div class="col-md-4">
+      <img src="{% static 'shwetha.jpg' %}"  class="img-responsive" height="250px" width="250px" style="margin:auto;border-radius:50%;">
+      <h3>Swetha Krishnan</h3>
+      <h4>Director of Delegate Affairs</h4>
     </div>
+  </div>
+  
+</div>
+<!-- Temporary -->
+<div id="pricing" class="container-fluid text-center " style="padding-top: 30px;">
+  <h1>COMMITTEES</h1>
+  
+  <br>
+  <div class="row slideanim">
+
+    <div class="col-sm-6">
+      <h1 style="padding:20px;">UNSC</h1>
+      <img style="margin:auto;" src="{% static 'unsc.svg' %}"  class="img-responsive" height="250px" width="250px">
+
+      <div style="padding: 40px;">
+        <h3>The United Nations Security Council (UNSC) is one of the six principal organs of the United Nations, charged with the maintenance of international peace and security as well as accepting new members to the United Nations and approving any changes to its United Nations Charter.
+           <br>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSerA4CwN4Zb3445tXk5kotCTElHapN2gs2NXINc0VM-qH74MQ/viewform?usp=fb_send_fb"> <button class="btn btn-lg btn-success " style="margin-top:30px;">Register Now</button></a></h3>
+      </div>
+      
+      
+    </div>
+    
+    <div class="col-sm-6">
+      <h1 style="padding:20px;">UNCOPUOS</h1>
+         <img style="margin:auto;" src="{% static 'uncopous1.png' %}"  class="img-responsive">
+      <div style="padding: 40px;">
+           
+      <h3>The United Nations Committee on the Peaceful Uses of Outer Space (COPUOS) was established in 1959.
+The mission of COPUOS is "to review the scope of international cooperation in peaceful uses of outer space, to devise programmes in this field to be undertaken under United Nations auspices, to encourage continued research and the dissemination of information on outer space matters, and to study legal problems arising from the exploration of outer space."
+           <br>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSerA4CwN4Zb3445tXk5kotCTElHapN2gs2NXINc0VM-qH74MQ/viewform?usp=fb_send_fb"> <button class="btn btn-lg btn-success " style="margin-top:30px;">Register Now</button></a></h3>
+     </div>
+    </div>
+    
   </div>
   
 </div>
 
 
 
-<!-- Container (Pricing Section) -->
-<div id="pricing" class="container-fluid" style="padding-top: 0px;">
+
+<div id="ip" class="container-fluid bg-grey" style="padding-top: 30px;">
   <div class="text-center" style="padding: 30px;">
-    <h1>COMMITTEES</h1>
+    <h1>INTERNATIONAL PRESS</h1>
     
   </div>
-  <div class="row slideanim">
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Committee </h1>
-        </div>
-        <div class="panel-body">
-          <img src="{% static 'img.jpg' %}"  class="img-responsive">
-        </div>
-        <div class="panel-footer">          
-          <button class="btn btn-lg btn-success custom_btn" data-toggle="modal" data-target="#myModal">Register</button>
-        </div>
-      </div>      
-    </div>     
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Committee </h1>
-        </div>
-        <div class="panel-body">
-          <img src="{% static 'img.jpg' %}" class="img-responsive">
-        </div>
-        <div class="panel-footer">
-         
-          <button class="btn btn-lg btn-success custom_btn">Details</button>
-        </div>
-      </div>      
-    </div>       
-    <div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-          <h1>Committee </h1>
-        </div>
-        <div class="panel-body">
-          <img src="{% static 'img.jpg' %}" class="img-responsive">
-        </div>
-        <div class="panel-footer">
-          
-          <button class="btn btn-lg btn-success custom_btn">Details</button>
-        </div>
-      </div>      
-    </div>     
-  </div>
-</div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+        <h3>
+          <p>As members of the IP corps, you will be a part of a simulation unlike any other at IIST MUN. Instead of representing the 
+interests of a single country, the International Press Delegation allows participants to act as unbiased journalists, 
+reporting on the proceedings of each simulation in the Conference. You will investigate committee debates, 
+conduct interviews, edit articles, and cover press conferences. </p>
+<p>Everyone has the right to freedom of opinion and expression; this right includes freedom to hold opinions 
+without interference and to seek, receive and impart information and ideas through any media and regardless of frontiers.</p>
 
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        </h3>
 
       </div>
-      <div class="modal-body">
-        <form method="post" class="add_form" style="margin: 40px;margin-top:0;font-family: 'Roboto', sans-serif;font-weight:100;">
-                  {% csrf_token %}
-                  {% include 'includes/bs4_form.html' with form=form %}
-                  <button class="btn btn-primary" style="margin-bottom:20px;">Submit</button>
-                </form>      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <div class="col-md-2">
+       
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfrXimouUJiLeA7lte0u518qxsCcbXasFTmOhzzEL7pSwZcSg/viewform"><button class="btn btn-success btn-lg" style="width:100%;">Register Now</button></a>
       </div>
     </div>
-
   </div>
-</div>
+  </div>
+
 
 <!-- Container (Contact Section) -->
-<div id="contact" class="container-fluid bg-grey" style="padding-top: 30px;">
+<div id="contact" class="container-fluid " style="padding-top: 30px;">
   <h1 class="text-center" style="margin-bottom: 40px;"> CONTACT US</h1>
   <div class="row">
     
     <div class="col-sm-4">      
-      <p><span class="glyphicon glyphicon-user"></span> Person</p>
-      <p><span class="glyphicon glyphicon-phone"></span>Phone Number</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+      <p><span class="glyphicon glyphicon-user"></span> Varshith Reddy</p>
+      <p><span class="glyphicon glyphicon-phone"></span>9447784224</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> varshithreddy2412@gmail.com</p>
     </div>
     <div class="col-sm-4">
       
-      <p><span class="glyphicon glyphicon-user"></span> Person</p>
-      <p><span class="glyphicon glyphicon-phone"></span>Phone Number</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+      <p><span class="glyphicon glyphicon-user"></span> 
+Prajwal Patnaik</p>
+      <p><span class="glyphicon glyphicon-phone"></span>7702453001</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> prajwalpatnaik2@gmail.com</p>
     </div>
     <div class="col-sm-4">
       
-      <p><span class="glyphicon glyphicon-user"></span> Person</p>
-      <p><span class="glyphicon glyphicon-phone"></span>Phone Number</p>
-      <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+      <p><span class="glyphicon glyphicon-user"></span>Swetha Krishnan</p>
+      <p><span class="glyphicon glyphicon-phone"></span>8943550706</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> swethakrishnan126@gmail.com</p>
     </div>
-    <!-- <div class="col-sm-7 slideanim">
-      <div class="row">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Send</button>
-        </div>
-      </div>
-    </div> -->
   </div>
 </div>
 
-<!-- Add Google Maps 
-<div id="googleMap" style="height:400px;width:100%;"></div>
-<script>
-function myMap() {
-var myCenter = new google.maps.LatLng(41.878114, -87.629798);
-var mapProp = {center:myCenter, zoom:12, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-var marker = new google.maps.Marker({position:myCenter});
-marker.setMap(map);
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
-
-To use this code on your website, get a free API key from Google.
-Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
--->
 
 <footer class="container-fluid text-center">
   <a href="#myPage" title="To Top">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
-  <p>Website Made By <a>Denil</a></p>
+  <p>Website Made By Denil V Robinson, <a href="https://www.facebook.com/groups/450935028443164/"> CSE Club, IIST</a></p>
 </footer>
 
 <script>
 $(document).ready(function(){
-
+$("#home_li").removeClass("active");
   // Add smooth scrolling to all links in navbar + footer link
   $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
     // Make sure this.hash has a value before overriding default behavior
@@ -510,6 +523,7 @@ $(document).ready(function(){
   });
   
   $(window).scroll(function() {
+    $("#home_li").removeClass("active");
     $(".slideanim").each(function(){
       var pos = $(this).offset().top;
 
@@ -519,12 +533,37 @@ $(document).ready(function(){
         }
     });
   });
+
 })
 
- 
+
+function logo_position(){
+  var h = $("#main").height()/2 - 185 + "px";
+  var w = $("#main").width()/2 - 125 + "px";
+  console.log(h);
+  console.log(w);
+  $("#logo").css("left",w);
+  $("#logo").css("top",h);
+}
+$( window ).resize(function() {
+  logo_position();
+  img();
+});
 
 
+
+function img(){
+  if($("#myCarousel").is(':hidden')){
+  $("#main").css("background-image","url({% static '10.jpg' %})");
+}
+else{
+  $("#main").css("background-image","none");
+}
+}
+img();
+logo_position();
 </script>
+
 
 </body>
 </html>
